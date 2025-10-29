@@ -524,4 +524,4 @@ SOFTWARE.
 - **Autor**: José Huerta - Bootcamp End Trainee 2025
 - **Módulo**: Proyecto Final Módulo 8
 
-- 🌐 **Demo Live**: [https://josemhuertab.github.io/adweb-cursos-online](https://tu-usuario.github.io/adweb-cursos-online)
+- 🌐 **Demo Live**: [https://josemhuertab.github.io/adweb-cursos-online](https://josemhuertab.github.io/adweb-cursos-online)
