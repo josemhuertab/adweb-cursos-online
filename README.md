@@ -328,24 +328,6 @@ adweb-cursos-online/
 
 ---
 
-## 🔄 Flujo de Inscripciones
-
-### **Proceso Completo**
-
-```mermaid
-graph TD
-    A[👤 Usuario ve curso] --> B[🖱️ Clic en 'Inscribirse']
-    B --> C[📝 Sistema crea solicitud]
-    C --> D[🔔 Notificación al admin]
-    D --> E[👨‍💼 Admin ve campanita]
-    E --> F[📋 Admin abre panel]
-    F --> G{🤔 Decisión del admin}
-    G -->|✅ Aprobar| H[✅ Usuario agregado al curso]
-    G -->|❌ Rechazar| I[❌ Solicitud rechazada]
-    H --> J[🎓 Usuario puede acceder]
-    I --> K[📧 Notificación de rechazo]
-```
-
 ### **Estados de Inscripción**
 
 | Estado | Descripción | Acción del Usuario | Acción del Admin |
@@ -375,49 +357,6 @@ graph TD
 ### **GitHub Pages (Automático)**
 
 El proyecto se despliega automáticamente en GitHub Pages cuando se hace push a la rama `main`.
-
-#### **Configuración Requerida**
-1. Ve a tu repositorio en GitHub
-2. Settings > Pages
-3. Source: "GitHub Actions"
-4. El workflow se ejecutará automáticamente
-
-#### **Variables de Entorno (Opcional)**
-Para mayor seguridad, configura estos secrets en GitHub:
-- `VITE_FIREBASE_API_KEY`
-- `VITE_FIREBASE_AUTH_DOMAIN`
-- `VITE_FIREBASE_PROJECT_ID`
-- `VITE_FIREBASE_STORAGE_BUCKET`
-- `VITE_FIREBASE_MESSAGING_SENDER_ID`
-- `VITE_FIREBASE_APP_ID`
-
-### **Firebase Hosting (Manual)**
-
-```bash
-# Build del proyecto
-npm run build
-
-# Deploy a Firebase
-firebase deploy --project tu-proyecto-id
-```
-
-### **Configuración de Producción**
-
-#### **Variables de Entorno**
-Asegúrate de configurar las variables de entorno en tu plataforma de deployment:
-
-```env
-VITE_FIREBASE_API_KEY=tu-api-key-produccion
-VITE_FIREBASE_AUTH_DOMAIN=tu-dominio-produccion
-# ... resto de variables
-```
-
-#### **Optimizaciones de Build**
-- ✅ Code splitting automático
-- ✅ Minificación de assets
-- ✅ Compresión gzip
-- ✅ Lazy loading de componentes
-- ✅ Optimización de imágenes
 
 ---
 
