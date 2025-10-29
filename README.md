@@ -23,10 +23,8 @@ Una solución completa de e-learning que permite a los usuarios explorar, inscri
 - [Roles de Usuario](#-roles-de-usuario)
 - [Flujo de Inscripciones](#-flujo-de-inscripciones)
 - [Deployment](#-deployment)
-- [Scripts Disponibles](#-scripts-disponibles)
-- [Estándares de Desarrollo](#-estándares-de-desarrollo)
-- [Contribución](#-contribución)
 - [Licencia](#-licencia)
+- [Contacto](#-contacto)
 
 ---
 
