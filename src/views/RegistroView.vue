@@ -1,124 +1,162 @@
 <template>
-  <div class="register-container">
-    <v-container fluid class="h-100">
-      <v-row class="h-100">
-        <v-col cols="12" lg="6" class="d-none d-lg-flex align-center justify-center bg-light">
-          <div class="text-center">
-            <div class="illustration-container mb-4">
-              <v-icon color="primary" size="128" style="opacity: 0.8;">mdi-account-plus</v-icon>
+  <div class="register-view">
+    <v-container fluid class="register-view__container">
+      <v-row class="register-view__row">
+        <v-col cols="12" lg="6" class="register-view__illustration d-none d-lg-flex">
+          <div class="register-view__illustration-content">
+            <div class="register-view__icon-container">
+              <v-icon color="primary" size="128" class="register-view__icon">
+                mdi-account-plus
+              </v-icon>
             </div>
-            <h3 class="fw-bold text-dark mb-3">Únete a ADWEB Online</h3>
-            <p class="text-muted fs-5 mb-4">
+            <h3 class="register-view__illustration-title">
+              Únete a ADWEB Online
+            </h3>
+            <p class="register-view__illustration-subtitle">
               Comienza tu viaje en el desarrollo web
             </p>
-            <div class="features-list">
-              <div class="feature-item mb-2">
-                <v-icon color="success" class="me-2">mdi-check-circle</v-icon>
+            <div class="register-view__features">
+              <div class="register-view__feature">
+                <v-icon color="success" class="register-view__feature-icon">
+                  mdi-check-circle
+                </v-icon>
                 <span>Registro gratuito</span>
               </div>
-              <div class="feature-item mb-2">
-                <v-icon color="success" class="me-2">mdi-check-circle</v-icon>
+              <div class="register-view__feature">
+                <v-icon color="success" class="register-view__feature-icon">
+                  mdi-check-circle
+                </v-icon>
                 <span>Acceso inmediato</span>
               </div>
-              <div class="feature-item">
-                <v-icon color="success" class="me-2">mdi-check-circle</v-icon>
+              <div class="register-view__feature">
+                <v-icon color="success" class="register-view__feature-icon">
+                  mdi-check-circle
+                </v-icon>
                 <span>Soporte 24/7</span>
               </div>
             </div>
           </div>
         </v-col>
 
-        <v-col cols="12" lg="6" class="d-flex align-center justify-center">
-          <div class="register-form-container">
-            <div class="text-center mb-4">
-              <div class="logo-container mb-3">
+        <v-col cols="12" lg="6" class="register-view__form-section">
+          <div class="register-view__form-container">
+            <div class="register-view__header">
+              <div class="register-view__logo">
                 <v-icon color="primary" size="48">mdi-school</v-icon>
               </div>
-              <h2 class="fw-bold text-dark mb-2">Crear Cuenta</h2>
-              <p class="text-muted">Regístrate en ADWEB Online</p>
+              <h2 class="register-view__title">Crear Cuenta</h2>
+              <p class="register-view__subtitle">
+                Regístrate en ADWEB Online
+              </p>
             </div>
 
-            <v-form @submit.prevent="handleRegister" class="register-form">
+            <v-form 
+              @submit.prevent="handleRegister" 
+              class="register-view__form"
+              ref="registerForm"
+            >
               <v-text-field
                 v-model="formData.name"
                 label="Nombre Completo"
-                :error="!!errors.name"
-                :error-messages="errors.name ? [errors.name] : []"
+                :error-messages="errors.name"
                 prepend-inner-icon="mdi-account"
+                variant="outlined"
                 density="comfortable"
+                :rules="nameRules"
                 required
+                class="register-view__field"
               />
 
               <v-text-field
                 v-model="formData.email"
                 label="Correo Electrónico"
                 type="email"
-                :error="!!errors.email"
-                :error-messages="errors.email ? [errors.email] : []"
+                :error-messages="errors.email"
                 prepend-inner-icon="mdi-email"
+                variant="outlined"
                 density="comfortable"
+                :rules="emailRules"
                 required
+                class="register-view__field"
               />
 
               <v-text-field
                 v-model="formData.password"
                 :type="showPassword ? 'text' : 'password'"
                 label="Contraseña"
-                :error="!!errors.password"
-                :error-messages="errors.password ? [errors.password] : []"
+                :error-messages="errors.password"
                 prepend-inner-icon="mdi-lock"
-                append-inner-icon="mdi-eye"
+                :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append-inner="togglePassword"
                 placeholder="Mínimo 6 caracteres"
+                variant="outlined"
                 density="comfortable"
+                :rules="passwordRules"
                 required
+                class="register-view__field"
               />
 
               <v-text-field
                 v-model="formData.confirmPassword"
                 :type="showConfirmPassword ? 'text' : 'password'"
                 label="Confirmar Contraseña"
-                :error="!!errors.confirmPassword"
-                :error-messages="errors.confirmPassword ? [errors.confirmPassword] : []"
+                :error-messages="errors.confirmPassword"
                 prepend-inner-icon="mdi-lock-check"
-                append-inner-icon="mdi-eye"
+                :append-inner-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append-inner="toggleConfirmPassword"
+                variant="outlined"
                 density="comfortable"
+                :rules="confirmPasswordRules"
                 required
+                class="register-view__field"
               />
 
               <v-checkbox
                 v-model="formData.acceptTerms"
-                :error="!!errors.acceptTerms"
-                :error-messages="errors.acceptTerms ? [errors.acceptTerms] : []"
+                :error-messages="errors.acceptTerms"
                 label="Acepto los términos y condiciones y la política de privacidad"
-                class="mb-4"
+                :rules="termsRules"
                 required
+                class="register-view__checkbox"
               />
 
               <v-btn
                 type="submit"
                 color="primary"
                 size="large"
-                class="w-100 mb-3"
+                class="register-view__submit-btn"
                 :loading="isLoading"
                 prepend-icon="mdi-account-plus"
+                block
               >
                 {{ isLoading ? 'Creando cuenta...' : 'Crear Cuenta' }}
               </v-btn>
 
-              <v-alert v-if="generalError" type="error" variant="tonal" class="mb-3">
+              <v-alert 
+                v-if="generalError" 
+                type="error" 
+                variant="tonal" 
+                class="register-view__error"
+              >
                 {{ generalError }}
               </v-alert>
 
-              <v-alert v-if="successMessage" type="success" variant="tonal" class="mb-3">
+              <v-alert 
+                v-if="successMessage" 
+                type="success" 
+                variant="tonal" 
+                class="register-view__success"
+              >
                 {{ successMessage }}
               </v-alert>
 
-              <div class="text-center">
-                <p class="mb-0">
+              <div class="register-view__footer">
+                <p class="register-view__footer-text">
                   ¿Ya tienes una cuenta?
-                  <RouterLink to="/login" class="text-primary text-decoration-none fw-semibold">
+                  <RouterLink 
+                    to="/login" 
+                    class="register-view__footer-link"
+                  >
                     Inicia sesión aquí
                   </RouterLink>
                 </p>
@@ -132,8 +170,8 @@
 </template>
 
 <script>
-// ... (script content is unchanged)
 import { useAuthStore } from '@/stores/authStore'
+import { validateEmail, validatePassword } from '@/utils/helpers'
 
 export default {
   name: 'RegistroView',
@@ -151,62 +189,33 @@ export default {
       successMessage: '',
       isLoading: false,
       showPassword: false,
-      showConfirmPassword: false
+      showConfirmPassword: false,
+      nameRules: [
+        v => !!v || 'El nombre es requerido',
+        v => (v && v.trim().length >= 2) || 'El nombre debe tener al menos 2 caracteres'
+      ],
+      emailRules: [
+        v => !!v || 'El correo electrónico es requerido',
+        v => validateEmail(v) || 'Ingresa un correo electrónico válido'
+      ],
+      passwordRules: [
+        v => !!v || 'La contraseña es requerida',
+        v => (v && v.length >= 6) || 'La contraseña debe tener al menos 6 caracteres',
+        v => {
+          const validation = validatePassword(v)
+          return validation.hasLetter && validation.hasNumber || 'La contraseña debe contener al menos una letra y un número'
+        }
+      ],
+      confirmPasswordRules: [
+        v => !!v || 'Confirma tu contraseña',
+        v => v === this.formData.password || 'Las contraseñas no coinciden'
+      ],
+      termsRules: [
+        v => !!v || 'Debes aceptar los términos y condiciones'
+      ]
     }
   },
   methods: {
-    validateForm() {
-      this.errors = {}
-      
-      // Name validation
-      if (!this.formData.name.trim()) {
-        this.errors.name = 'El nombre es requerido'
-      } else if (this.formData.name.trim().length < 2) {
-        this.errors.name = 'El nombre debe tener al menos 2 caracteres'
-      }
-      
-      // Email validation
-      if (!this.formData.email) {
-        this.errors.email = 'El correo electrónico es requerido'
-      } else if (!this.isValidEmail(this.formData.email)) {
-        this.errors.email = 'Ingresa un correo electrónico válido'
-      }
-      
-      // Password validation
-      if (!this.formData.password) {
-        this.errors.password = 'La contraseña es requerida'
-      } else if (this.formData.password.length < 6) {
-        this.errors.password = 'La contraseña debe tener al menos 6 caracteres'
-      } else if (!this.isStrongPassword(this.formData.password)) {
-        this.errors.password = 'La contraseña debe contener al menos una letra y un número'
-      }
-      
-      // Confirm password validation
-      if (!this.formData.confirmPassword) {
-        this.errors.confirmPassword = 'Confirma tu contraseña'
-      } else if (this.formData.password !== this.formData.confirmPassword) {
-        this.errors.confirmPassword = 'Las contraseñas no coinciden'
-      }
-      
-      // Terms validation
-      if (!this.formData.acceptTerms) {
-        this.errors.acceptTerms = 'Debes aceptar los términos y condiciones'
-      }
-      
-      return Object.keys(this.errors).length === 0
-    },
-    
-    isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      return emailRegex.test(email)
-    },
-    
-    isStrongPassword(password) {
-      const hasLetter = /[a-zA-Z]/.test(password)
-      const hasNumber = /\d/.test(password)
-      return hasLetter && hasNumber
-    },
-    
     togglePassword() {
       this.showPassword = !this.showPassword
     },
@@ -219,9 +228,8 @@ export default {
       this.generalError = ''
       this.successMessage = ''
       
-      if (!this.validateForm()) {
-        return
-      }
+      const { valid } = await this.$refs.registerForm.validate()
+      if (!valid) return
       
       this.isLoading = true
       
@@ -235,17 +243,15 @@ export default {
         this.$router.push('/home')
 
       } catch (error) {
-        console.error('Register error:', error)
-        if (error === 'auth/email-already-in-use') {
+        if (error.message.includes('email-already-in-use')) {
           this.generalError = 'El correo electrónico ya está en uso'
-        } else if (error === 'auth/invalid-email') {
+        } else if (error.message.includes('invalid-email')) {
           this.generalError = 'El correo electrónico no es válido'
-        } else if (error === 'auth/weak-password') {
+        } else if (error.message.includes('weak-password')) {
           this.generalError = 'La contraseña es demasiado débil'
         } else {
           this.generalError = 'Error al crear la cuenta. Intenta nuevamente.'
         }
-        this.generalError = 'Error al crear la cuenta. Intenta nuevamente.'
       } finally {
         this.isLoading = false
       }
@@ -255,54 +261,151 @@ export default {
 </script>
 
 <style scoped>
-.register-container {
-  /* Cambio a un gradiente más suave (tonos pastel de azul/lila) */
+.register-view {
   min-height: 100vh;
   background: linear-gradient(135deg, #a3c4f3 0%, #b2a3f3 100%);
-  height: 100vh;
   display: flex;
   align-items: center;
 }
 
-.register-form-container {
+.register-view__container {
+  height: 100vh;
+}
+
+.register-view__row {
+  height: 100%;
+}
+
+.register-view__illustration {
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.register-view__illustration-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.register-view__icon-container {
+  margin-bottom: 2rem;
+}
+
+.register-view__icon {
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+.register-view__illustration-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.register-view__illustration-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.register-view__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-view__feature {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.register-view__feature-icon {
+  margin-right: 0.5rem;
+}
+
+.register-view__form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-view__form-container {
   background: white;
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra más sutil */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 500px;
 }
 
-.logo-container {
+.register-view__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-view__logo {
+  margin-bottom: 1rem;
   animation: fadeInDown 0.8s ease-out;
 }
 
-.register-form {
+.register-view__title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.register-view__subtitle {
+  color: #666;
+  margin: 0;
+}
+
+.register-view__form {
   animation: fadeInUp 0.8s ease-out;
 }
 
+.register-view__field {
+  margin-bottom: 1rem;
+}
 
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 12px;
-  padding: 12px 24px;
+.register-view__checkbox {
+  margin-bottom: 1.5rem;
+}
+
+.register-view__submit-btn {
+  margin-bottom: 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+.register-view__error,
+.register-view__success {
+  margin-bottom: 1rem;
 }
 
-.illustration-container {
-  animation: float 3s ease-in-out infinite;
+.register-view__footer {
+  text-align: center;
 }
 
-.feature-item {
-  font-size: 1.1rem;
-  font-weight: 500;
+.register-view__footer-text {
+  margin: 0;
+  color: #666;
+}
+
+.register-view__footer-link {
+  color: #764ba2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-view__footer-link:hover {
+  text-decoration: underline;
 }
 
 @keyframes fadeInDown {
@@ -337,29 +440,21 @@ export default {
 }
 
 @media (max-width: 991.98px) {
-  .register-form-container {
+  .register-view__form-container {
     margin: 2rem;
     padding: 2rem;
   }
   
-  .register-container {
-    /* Fondo blanco en móvil para mejor contraste con la tarjeta */
+  .register-view {
     background: white;
   }
 }
 
 @media (max-width: 575.98px) {
-  .register-form-container {
+  .register-view__form-container {
     margin: 1rem;
     padding: 1.5rem;
     border-radius: 15px;
   }
 }
-  
-  /* Centrado vertical total (ya estaba bien definido) */
-  /* .register-container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-  } */
 </style>

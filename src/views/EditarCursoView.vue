@@ -1,5 +1,3 @@
-// EditarCursoView.vue
-
 <template>
   <div class="editar-curso-container">
     <v-container class="py-5">
@@ -93,16 +91,16 @@ export default {
     const alertMessage = ref('');
     const alertType = ref('');
 
-    // Busca el curso en el store (reactivo)
+
     const course = computed(() => {
-      // Usar getCourses del store
+
       return store.getCourses.find(c => c.id === courseId); 
     });
 
-    // Carga los datos al iniciar o cuando el curso se actualiza en el store
+
     watchEffect(() => {
       if (course.value) {
-        courseCache.value = JSON.parse(JSON.stringify(course.value)); // Clonar para edición
+        courseCache.value = JSON.parse(JSON.stringify(course.value));
       }
     });
 
@@ -137,7 +135,7 @@ export default {
         showAlert(`✅ Curso "${courseCache.value.name}" actualizado correctamente. Redirigiendo...`, 'alert-success');
         
         setTimeout(() => {
-          router.push({ name: 'Admin' }); 
+          router.push({ name: 'Admin' });
         }, 1500);
 
       } else {

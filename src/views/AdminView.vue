@@ -1,5 +1,3 @@
-// AdminView.vue
-
 <template>
   <div class="admin-container">
     <v-container class="py-5">
@@ -52,7 +50,7 @@ export default {
     });
 
     return {
-      // Se expone el estado para mostrar mensajes de carga y error
+
       loading: coursesStore.loading, 
       error: coursesStore.error, 
     }
