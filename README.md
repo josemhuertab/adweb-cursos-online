@@ -2,9 +2,12 @@
 
 > **Plataforma moderna de cursos en línea desarrollada con Vue.js 3, Vuetify y Firebase**
 
-[imagen]
-
 Una solución completa de e-learning que permite a los usuarios explorar, inscribirse y acceder a cursos de programación frontend, con un sistema de gestión administrativa robusto y notificaciones en tiempo real.
+
+<img width="1878" height="882" alt="image" src="https://github.com/user-attachments/assets/e05b9f05-0929-4f75-ba5f-98910619bd7f" />
+<img width="1877" height="901" alt="image" src="https://github.com/user-attachments/assets/0a401f71-4e2b-4927-b4b0-99355d004060" />
+<img width="1876" height="904" alt="image" src="https://github.com/user-attachments/assets/7711f8e2-1369-44bd-807b-54a38fd7b17b" />
+<img width="1878" height="903" alt="image" src="https://github.com/user-attachments/assets/04eed2d9-c163-4f73-b42a-372ed9c1d0bc" />
 
 ---
 
@@ -58,8 +61,6 @@ Una solución completa de e-learning que permite a los usuarios explorar, inscri
 - Componentes reutilizables y modulares
 - Código limpio y mantenible
 
-[imagen]
-
 ---
 
 ## 🛠 Tecnologías Utilizadas
@@ -88,8 +89,6 @@ Una solución completa de e-learning que permite a los usuarios explorar, inscri
 | **ESLint** | Linting de código |
 | **Prettier** | Formateo de código |
 | **Vue DevTools** | Debugging |
-
-[imagen]
 
 ---
 
@@ -134,8 +133,6 @@ Una solución completa de e-learning que permite a los usuarios explorar, inscri
 │  (Firebase)  │    │ (Navigation) │    │  (Helpers)   │
 └──────────────┘    └──────────────┘    └──────────────┘
 ```
-
-[imagen]
 
 ---
 
@@ -191,10 +188,6 @@ node scripts/seedCourses.js
 ```bash
 npm run dev
 ```
-
-La aplicación estará disponible en `http://localhost:5173`
-
-[imagen]
 
 ---
 
@@ -252,8 +245,6 @@ adweb-cursos-online/
 └── package.json               # Dependencias y scripts
 ```
 
-[imagen]
-
 ---
 
 ## 🎯 Funcionalidades
@@ -304,8 +295,6 @@ adweb-cursos-online/
 - Asignación manual de estudiantes
 - Control de estados de cursos
 
-[imagen]
-
 ---
 
 ## 👥 Roles de Usuario
@@ -343,8 +332,6 @@ adweb-cursos-online/
 - Botones de inscripción intuitivos
 - Estados visuales de solicitudes
 - Acceso directo a cursos aprobados
-
-[imagen]
 
 ---
 
@@ -388,13 +375,11 @@ graph TD
 - ❌ Inscripción rechazada (con motivo)
 - 📧 Confirmación de solicitud enviada
 
-[imagen]
-
 ---
 
 ## 🚀 Deployment
 
-### **GitHub Pages (Automático)**
+### **GitHub Pages**
 
 El proyecto se despliega automáticamente en GitHub Pages cuando se hace push a la rama `main`.
 
@@ -443,8 +428,6 @@ VITE_FIREBASE_AUTH_DOMAIN=tu-dominio-produccion
 - ✅ Compresión gzip
 - ✅ Lazy loading de componentes
 - ✅ Optimización de imágenes
-
-[imagen]
 
 ---
 
@@ -499,176 +482,7 @@ npm outdated
 npm update
 ```
 
-[imagen]
-
 ---
-
-## 📋 Estándares de Desarrollo
-
-### **✅ Cumplimiento de Requisitos**
-
-#### **1. Funcionalidad y Ejecución**
-- ✅ **Sin errores**: Aplicación funcional sin errores de ejecución
-- ✅ **Navegación consistente**: Rutas protegidas y navegación fluida
-- ✅ **Elementos organizados**: Layout limpio y profesional
-- ✅ **Presentación sobresaliente**: UI moderna con Vuetify
-
-#### **2. Funcionalidades Avanzadas**
-- ✅ **Más que lo necesario**: Sistema completo de inscripciones + notificaciones
-- ✅ **Objetivos superados**: Gestión en tiempo real y UX optimizada
-
-#### **3. HTML Semántico**
-- ✅ **Etiquetas representativas**: Uso correcto de elementos HTML5
-- ✅ **Separación congruente**: Estructura clara del BODY
-- ✅ **Accesibilidad**: Etiquetas ARIA y navegación por teclado
-
-#### **4. Diseño Responsivo**
-- ✅ **Dispositivos pequeños**: Adaptación completa a móviles
-- ✅ **Breakpoints**: Mobile-first design con Vuetify
-- ✅ **Touch-friendly**: Interfaz optimizada para táctil
-
-#### **5. Interacción Clara**
-- ✅ **Elementos notables**: Botones y acciones bien definidas
-- ✅ **Conducción clara**: UX intuitiva y guiada
-
-#### **6. Framework Utilizado**
-- ✅ **Vuetify implementado**: Material Design completo
-- ✅ **Personalización**: Estilos adaptados cuando necesario
-
-#### **7. Componentes Reutilizables**
-- ✅ **Componentes web**: Arquitectura modular
-- ✅ **Reutilización adecuada**: DRY principle aplicado
-
-#### **8. Ciclo de Vida**
-- ✅ **Métodos optimizados**: onMounted, onUnmounted correctos
-- ✅ **Solución al problema**: Gestión eficiente de recursos
-
-#### **9. Props y Emit**
-- ✅ **Comunicación padre-hijo**: Implementación correcta
-- ✅ **Reutilización**: Componentes flexibles y configurables
-
-#### **10. Buenas Prácticas de Rutas**
-- ✅ **URIs consistentes**: Estructura jerárquica clara
-- ✅ **Parámetros por URL**: Edición de cursos con ID
-- ✅ **Rutas por defecto**: Redirects y guards implementados
-
-#### **11. JavaScript Moderno**
-- ✅ **Sintaxis ES6+**: Arrow functions, destructuring
-- ✅ **Declaración correcta**: const, let según contexto
-- ✅ **Ciclos y condicionales**: Implementación eficiente
-
-#### **12. ES6/ES7 Avanzado**
-- ✅ **Arrow functions**: Uso consistente
-- ✅ **Métodos de array**: map, filter, find, etc.
-- ✅ **Destructuring**: Parámetros y objetos
-- ✅ **Spread operator**: Clonado y merge de objetos
-
-#### **13. Firebase Óptimo**
-- ✅ **Integración completa**: Auth + Firestore + Hosting
-- ✅ **Acceso restringido**: Solo usuarios autenticados
-- ✅ **Reglas de seguridad**: Protección de datos
-- ✅ **Validaciones**: Integridad y permisos
-
-#### **14. Vue Data Reactivo**
-- ✅ **Objeto data**: Datos reactivos en templates
-- ✅ **Computed properties**: Propiedades calculadas
-- ✅ **Watchers**: Observadores cuando necesario
-
-#### **15. Pinia Estructurado**
-- ✅ **Estructura recomendada**: Stores organizados
-- ✅ **Servicios REST**: Encapsulación de Firebase
-- ✅ **Estado centralizado**: Gestión eficiente
-
-#### **16. Código Organizado**
-- ✅ **Bien organizado**: Estructura clara de carpetas
-- ✅ **Indentación**: Formato consistente
-- ✅ **Comentarios claros**: Documentación cuando necesario
-
-#### **17. Estándares Web**
-- ✅ **HTML, CSS, JS**: Cumplimiento de estándares
-- ✅ **Código semántico**: Significado claro
-- ✅ **Accesibilidad**: WCAG guidelines
-
-#### **18. Accesibilidad Avanzada**
-- ✅ **Etiquetas ARIA**: Screen reader support
-- ✅ **Contraste de colores**: WCAG AA compliance
-- ✅ **Navegación por teclado**: Tab navigation
-
-#### **19. Código Modular**
-- ✅ **Modularidad**: Separación de responsabilidades
-- ✅ **Legibilidad**: Código auto-documentado
-- ✅ **Reutilización**: Funciones y componentes reutilizables
-
-### **🎨 Metodología BEM**
-```css
-/* Bloque */
-.course-card { }
-
-/* Elemento */
-.course-card__title { }
-.course-card__description { }
-
-/* Modificador */
-.course-card--disabled { }
-.course-card__button--primary { }
-```
-
-### **🔧 Arquitectura de Componentes**
-- **Atomic Design**: Componentes atómicos, moleculares y organismos
-- **Single Responsibility**: Cada componente tiene una responsabilidad
-- **Props Interface**: Interfaces bien definidas
-- **Event Emission**: Comunicación clara padre-hijo
-
-[imagen]
-
----
-
-## 🤝 Contribución
-
-### **Proceso de Contribución**
-
-1. **Fork** del repositorio
-2. **Crear rama** para la feature: `git checkout -b feature/nueva-funcionalidad`
-3. **Commit** cambios: `git commit -m 'feat: añadir nueva funcionalidad'`
-4. **Push** a la rama: `git push origin feature/nueva-funcionalidad`
-5. **Crear Pull Request**
-
-### **Estándares de Código**
-
-#### **Commits Convencionales**
-```
-feat: nueva funcionalidad
-fix: corrección de bug
-docs: actualización de documentación
-style: cambios de formato
-refactor: refactorización de código
-test: añadir tests
-chore: tareas de mantenimiento
-```
-
-#### **Estructura de PR**
-```markdown
-## Descripción
-Breve descripción de los cambios
-
-## Tipo de cambio
-- [ ] Bug fix
-- [ ] Nueva funcionalidad
-- [ ] Breaking change
-- [ ] Documentación
-
-## Testing
-- [ ] Tests unitarios
-- [ ] Tests de integración
-- [ ] Testing manual
-
-## Checklist
-- [ ] Código sigue los estándares del proyecto
-- [ ] Self-review completado
-- [ ] Documentación actualizada
-```
-
-[imagen]
 
 ---
 
@@ -702,34 +516,12 @@ SOFTWARE.
 
 ---
 
-## 📞 Contacto y Soporte
+## 📞 Contacto
 
 ### **Información del Proyecto**
 - **Proyecto**: ADWEB Cursos Online
 - **Versión**: 1.0.0
-- **Autor**: Bootcamp Aplicaciones Front End Trainee 2025
-- **Módulo**: Proyecto Final Módulo 7
+- **Autor**: José Huerta - Bootcamp End Trainee 2025
+- **Módulo**: Proyecto Final Módulo 8
 
-### **Enlaces Útiles**
-- 🌐 **Demo Live**: [https://tu-usuario.github.io/adweb-cursos-online](https://tu-usuario.github.io/adweb-cursos-online)
-- 📚 **Documentación**: [GitHub Wiki](https://github.com/tu-usuario/adweb-cursos-online/wiki)
-- 🐛 **Reportar Bugs**: [GitHub Issues](https://github.com/tu-usuario/adweb-cursos-online/issues)
-- 💡 **Solicitar Features**: [GitHub Discussions](https://github.com/tu-usuario/adweb-cursos-online/discussions)
-
-### **Tecnologías de Referencia**
-- 📖 [Vue.js Documentation](https://vuejs.org/)
-- 🎨 [Vuetify Documentation](https://vuetifyjs.com/)
-- 🔥 [Firebase Documentation](https://firebase.google.com/docs)
-- 🍍 [Pinia Documentation](https://pinia.vuejs.org/)
-
----
-
-<div align="center">
-
-**🎓 Desarrollado con ❤️ para el aprendizaje y la educación**
-
-[imagen]
-
-*ADWEB Cursos Online - Transformando la educación digital*
-
-</div>
+- 🌐 **Demo Live**: [https://josemhuertab.github.io/adweb-cursos-online](https://tu-usuario.github.io/adweb-cursos-online)
