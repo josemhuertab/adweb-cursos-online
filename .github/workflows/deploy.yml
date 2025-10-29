@@ -8,6 +8,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     permissions:
       contents: read
       pages: write
@@ -30,12 +34,6 @@ jobs:
       run: npm run build
       env:
         NODE_ENV: production
-        VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY || 'AIzaSyD-UNctI2YvYg7ZTG7PZ9tuzBJAPbA2QcE' }}
-        VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN || 'adweb-cursos-online.firebaseapp.com' }}
-        VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID || 'adweb-cursos-online' }}
-        VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET || 'adweb-cursos-online.firebasestorage.app' }}
-        VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID || '512127636297' }}
-        VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID || '1:512127636297:web:c9f312633e9995e6f88098' }}
         
     - name: Setup Pages
       uses: actions/configure-pages@v4

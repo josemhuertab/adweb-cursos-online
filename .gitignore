@@ -8,14 +8,6 @@ dist
 dist-ssr
 build
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.*.local
-
 # Firebase
 .firebase/
 .firebaserc.backup
@@ -96,9 +88,6 @@ temp/
 # Kiro IDE files (development only)
 .kiro/
 
-# Kiro IDE files (development specs and tasks)
-.kiro/
-
 # OS generated files
 .DS_Store
 .DS_Store?
@@ -135,12 +124,6 @@ coverage
 *.db
 *.sqlite
 *.sqlite3
-
-# Development scripts (optional - uncomment if you want to keep them private)
-# scripts/seedCourses.js
-# scripts/createAdmin.js
-# scripts/createTestUser.js
-# scripts/updateCourseImages.js
 
 # Documentation drafts
 *.draft.md
