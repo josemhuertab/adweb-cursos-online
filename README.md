@@ -379,27 +379,24 @@ graph TD
 
 ## 🚀 Deployment
 
-### **GitHub Pages**
+### **GitHub Pages (Automático)**
 
 El proyecto se despliega automáticamente en GitHub Pages cuando se hace push a la rama `main`.
 
-#### **Configuración del Workflow**
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [ main ]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-    - run: npm ci
-    - run: npm run build
-    - uses: peaceiris/actions-gh-pages@v3
-```
+#### **Configuración Requerida**
+1. Ve a tu repositorio en GitHub
+2. Settings > Pages
+3. Source: "GitHub Actions"
+4. El workflow se ejecutará automáticamente
+
+#### **Variables de Entorno (Opcional)**
+Para mayor seguridad, configura estos secrets en GitHub:
+- `VITE_FIREBASE_API_KEY`
+- `VITE_FIREBASE_AUTH_DOMAIN`
+- `VITE_FIREBASE_PROJECT_ID`
+- `VITE_FIREBASE_STORAGE_BUCKET`
+- `VITE_FIREBASE_MESSAGING_SENDER_ID`
+- `VITE_FIREBASE_APP_ID`
 
 ### **Firebase Hosting (Manual)**
 
