@@ -83,6 +83,7 @@ temp/
 
 # Editor directories and files
 .vscode/*
+.vscode/
 !.vscode/extensions.json
 .idea
 *.suo
@@ -91,6 +92,9 @@ temp/
 *.sln
 *.sw?
 *~
+
+# Kiro IDE files (development only)
+.kiro/
 
 # Kiro IDE files (development specs and tasks)
 .kiro/
