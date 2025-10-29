@@ -3,6 +3,7 @@
 > **Plataforma moderna de cursos en línea desarrollada con Vue.js 3, Vuetify y Firebase**
 
 Una solución completa de e-learning que permite a los usuarios explorar, inscribirse y acceder a cursos de programación frontend, con un sistema de gestión administrativa robusto y notificaciones en tiempo real.
+- 🌐 **Demo Live**: [https://josemhuertab.github.io/adweb-cursos-online](https://josemhuertab.github.io/adweb-cursos-online)
 
 <img width="1878" height="882" alt="image" src="https://github.com/user-attachments/assets/e05b9f05-0929-4f75-ba5f-98910619bd7f" />
 <img width="1877" height="901" alt="image" src="https://github.com/user-attachments/assets/0a401f71-4e2b-4927-b4b0-99355d004060" />
@@ -81,14 +82,6 @@ Una solución completa de e-learning que permite a los usuarios explorar, inscri
 | **Cloud Firestore** | Base de datos NoSQL en tiempo real |
 | **Firebase Hosting** | Hosting y deployment |
 | **Firebase CLI** | Gestión y deployment |
-
-### **Herramientas de Desarrollo**
-| Herramienta | Propósito |
-|-------------|-----------|
-| **GitHub Actions** | CI/CD Pipeline |
-| **ESLint** | Linting de código |
-| **Prettier** | Formateo de código |
-| **Vue DevTools** | Debugging |
 
 ---
 
@@ -520,5 +513,3 @@ SOFTWARE.
 - **Versión**: 1.0.0
 - **Autor**: José Huerta - Bootcamp End Trainee 2025
 - **Módulo**: Proyecto Final Módulo 8
-
-- 🌐 **Demo Live**: [https://josemhuertab.github.io/adweb-cursos-online](https://josemhuertab.github.io/adweb-cursos-online)
